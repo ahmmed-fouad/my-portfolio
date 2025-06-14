@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 229, 100%, 10%;
+    --text: 276, 70%, 45%;
+    --subText: 270, 3%, 58%;
+    --bordHover: 276, 70%, 45%;
+    --border:268, 97%, 25%;
+    --bgCard: 213, 20%, 9%;
+
+  }
+
+  .dark {
+    --background: 240, 10%, 4%;
+    --text: 213 100% 46%;
+    --subText: 0, 1%, 30%;
+    --bordHover: 204, 96%, 30%;
+    --border:204, 96%, 68%;
+    --bgCard: 213, 20%, 9%;
+  }
+}
+
+  body {
+    background-color: hsl(var(--background));
+  }
+  /* .border-hover {
+  border-color: hsl(var(--bordHover) / var(--bordHover-opacity));
+} */
+
+
+/* Animated background */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 0% 0%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, hsl(var(--secondary) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, hsl(var(--secondary) / 0.15) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
