@@ -17,7 +17,7 @@ const About = () => {
           <h1 className="text-4xl font-bold mb-4 text-[hsl(var(--text))]">
             About Me
           </h1>
-          <p className="text-xl text-[hsl(var(--subText))]">
+          <p className="text-xl text-[hsl(var(--subText2))]">
             Passionate developer crafting digital experiences
           </p>
         </div>
@@ -32,19 +32,19 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
               My Journey
             </h2>
-            <p className="text-foreground/80 mb-4">
+            <p className="text-[hsl(var(--subText))] mb-4">
               I'm a freelance developer with over 5 years of experience in
               creating modern web and mobile applications. My journey in
               software development began with a passion for building things that
               make a difference.
             </p>
-            <p className="text-foreground/80 mb-4">
+            <p className="text-[hsl(var(--subText))] mb-4">
               Throughout my career, I've worked with various clients and
               companies, helping them transform their ideas into reality. I
               specialize in creating responsive, user-friendly applications
               using the latest technologies and best practices.
             </p>
-            <p className="text-foreground/80">
+            <p className="text-[hsl(var(--subText))]">
               When I'm not coding, you can find me exploring new technologies,
               contributing to open-source projects, or sharing my knowledge
               through technical writing and mentoring.
@@ -57,44 +57,38 @@ const About = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 "
           >
-            <div className="text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
+            <div className="bg-[hsl(var(--bgCard))] p-6 rounded-lg">
               <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
                 Education
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-[hsl(var(--subText))]">
                 <div>
-                  <h3 className="font-semibold">
-                    Bachelor of Science in Computer Science
-                  </h3>
-                  <p className="text-foreground/60">
-                    University Name, 2015-2019
-                  </p>
+                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p>University Name, 2015-2019</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold">
-                    Full Stack Development Certification
-                  </h3>
+                  <h3>Full Stack Development Certification</h3>
                   <p className="text-foreground/60">Coding Bootcamp, 2020</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
+            <div className="bg-[hsl(var(--bgCard))] p-6 rounded-lg">
               <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
                 Certifications
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-[hsl(var(--subText))]">
                 <div>
-                  <h3 className="font-semibold">AWS Certified Developer</h3>
-                  <p className="text-foreground/60">
+                  <h3>AWS Certified Developer</h3>
+                  <p>
                     Amazon Web Services, 2021
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold">
+                  <h3>
                     Google Cloud Professional Developer
                   </h3>
-                  <p className="text-foreground/60">Google Cloud, 2022</p>
+                  <p>Google Cloud, 2022</p>
                 </div>
               </div>
             </div>
@@ -146,7 +140,7 @@ const About = () => {
           <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
             Let's Work Together
           </h2>
-          <p className="text-foreground/60 mb-8 text-[hsl(var(--subText))]">
+          <p className="text-foreground/60 mb-8 text-[hsl(var(--subText2))]">
             I'm always open to discussing new projects and opportunities
           </p>
           <div className="flex flex-wrap justify-center gap-4">

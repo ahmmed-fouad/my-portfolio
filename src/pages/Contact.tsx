@@ -105,7 +105,7 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--text))] rounded-lg"
+            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--subText))] rounded-lg"
           >
             Thank you for your message! I'll get back to you soon.
           </motion.div>

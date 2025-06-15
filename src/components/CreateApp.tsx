@@ -26,6 +26,11 @@ export function CreateApp() {
     localStorage.setItem('appCreationChat', JSON.stringify(newMessages));
   };
 
+  const handleReset = () => {
+    setMessages([]);
+    localStorage.removeItem('appCreationChat');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -109,6 +114,13 @@ export function CreateApp() {
                 cursor-pointer p-5 text-[hsl(var(--text))]"
               >
                 Send
+              </Button>
+              <Button
+                onClick={handleReset}
+                className="border border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))] 
+                cursor-pointer p-5 text-[hsl(var(--text))]"
+              >
+                New Chat
               </Button>
             </form>
           </Card>

@@ -5,50 +5,25 @@ import devAnimation from '../assets/dev.json';
 import { CreateApp } from '../components/CreateApp';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { features } from '@/data/projects';
+import { features, homeButtons } from '@/data/projects';
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden ">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background to-background/80 ">
-        <div className="absolute inset-0 h-full">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-[hsl(var(--text))] rounded-full"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
+    <div>
       {/* Content */}
       <div className="relative container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center"
+          className="mx-auto text-center"
         >
           <div className="flex items-center justify-center">
             <div className="text-left">
-              <h1 className="text-4xl md:text-4xl font-bold mb-6 text-[hsl(var(--text))] text-xl ">
-                Welcome to My Portfolio
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[hsl(var(--text))] text-xl ">
+                Welcome to my Portfolio
               </h1>
-              <p className="text-xl md:text-2xl text-[hsl(var(--subText))] mb-8">
+              <p className="text-xl md:text-3xl text-[hsl(var(--subText2))] mb-8">
                 I'm a freelance developer specializing in creating modern,
                 responsive web applications
               </p>
@@ -63,33 +38,18 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-start gap-4">
-            <Button
-              asChild
-              variant="outline"
-              className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))] 
-              text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
-            >
-              <Link to="/projects">View Projects</Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
-            >
-              <Link to="/create-app">Create Your Custom App</Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
-            >
-              <Link to="/contact">Contact Me</Link>
-            </Button>
+          <div className="flex flex-wrap justify-start gap-5 md:gap-12">
+            {homeButtons.map((btn) => (
+              <Button
+                key={btn.id}
+                asChild
+                variant="outline"
+                className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))] 
+              text-[hsl(var(--text))] bg-[hsl(var(--bgCard))] text-xl py-5 px-8"
+              >
+                <Link to={btn.path}>{btn.title}</Link>
+              </Button>
+            ))}
           </div>
         </motion.div>
 
@@ -98,7 +58,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="my-[6rem] grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -109,16 +69,16 @@ const Home = () => {
             >
               <Card
                 className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-                 bg-[hsl(var(--bgCard))]"
+                 bg-[hsl(var(--bgCard))] h-[16rem]"
               >
                 <CardHeader>
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <CardTitle className="text-[hsl(var(--text))]">
+                  <CardTitle className="text-[hsl(var(--text))] text-3xl">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[hsl(var(--subText))] text-sm">
+                  <p className="text-[hsl(var(--subText))] text-xl">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -145,7 +105,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="text-center bg-[hsl(var(--bgCard))] rounded-full py-8"
+              className="text-center bg-[hsl(var(--bgCard))] border border-[hsl(var(--border))] rounded-full py-8"
             >
               <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--subText)/0.8)] mb-2">
                 {stat.value}

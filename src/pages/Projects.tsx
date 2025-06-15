@@ -34,9 +34,10 @@ const Projects = () => {
         <motion.div
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className="w-full md:w-[20%] space-y-6 "
+          className="w-full md:w-[20%] space-y-6"
         >
-          <div className=" bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] rounded-lg p-6 shadow-lg border text-[hsl(var(--subText))]">
+          <div className=" bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] rounded-lg p-6 shadow-lg border 
+          text-[hsl(var(--subText))]">
             <h3 className="text-lg font-semibold mb-4 text-[hsl(var(--text))]">
               Filters
             </h3>

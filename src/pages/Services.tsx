@@ -1,54 +1,9 @@
+import { services } from '@/data/projects';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-  const services = [
-    {
-      title: 'Web Development',
-      description: 'Creating modern, responsive web applications using the latest technologies like React, Next.js, and TypeScript.',
-      icon: '🌐',
-      features: [
-        'Custom Web Applications',
-        'E-commerce Solutions',
-        'Progressive Web Apps',
-        'API Development',
-      ],
-    },
-    {
-      title: 'UI/UX Design',
-      description: 'Designing beautiful and intuitive user interfaces with a focus on user experience and accessibility.',
-      icon: '🎨',
-      features: [
-        'User Interface Design',
-        'User Experience Design',
-        'Wireframing & Prototyping',
-        'Design Systems',
-      ],
-    },
-    {
-      title: 'Mobile Development',
-      description: 'Building cross-platform mobile applications using React Native for iOS and Android.',
-      icon: '📱',
-      features: [
-        'Cross-platform Apps',
-        'Native Features Integration',
-        'App Store Optimization',
-        'Performance Optimization',
-      ],
-    },
-    {
-      title: 'Consulting',
-      description: 'Providing expert advice on technology stack, architecture, and best practices for your projects.',
-      icon: '💡',
-      features: [
-        'Technical Architecture',
-        'Code Review',
-        'Performance Optimization',
-        'Best Practices',
-      ],
-    },
-  ];
-
+ 
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -59,7 +14,7 @@ const Services = () => {
         <h1 className="text-4xl font-bold mb-4 text-[hsl(var(--text))]">
           My Services
         </h1>
-        <p className="text-xl text-[hsl(var(--text))]">
+        <p className="text-xl text-[hsl(var(--subText2))]">
           I offer a wide range of services to help bring your ideas to life
         </p>
       </motion.div>
@@ -111,7 +66,7 @@ const Services = () => {
         <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
           Ready to Start Your Project?
         </h2>
-        <p className="text-foreground/60 mb-8">
+        <p className="text-[hsl(var(--subText2))] mb-8">
           Let's discuss how I can help bring your ideas to life
         </p>
         <Link
