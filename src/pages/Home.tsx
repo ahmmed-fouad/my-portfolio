@@ -16,7 +16,7 @@ const Home = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-[hsl(var(--text)/0.4)] rounded-full"
+              className="absolute w-2 h-2 bg-[hsl(var(--text))] rounded-full"
               initial={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
@@ -45,10 +45,10 @@ const Home = () => {
         >
           <div className="flex items-center justify-center">
             <div className="text-left">
-              <h1 className="text-4xl md:text-4xl font-bold mb-6 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] text-xl ">
+              <h1 className="text-4xl md:text-4xl font-bold mb-6 text-[hsl(var(--text))] text-xl ">
                 Welcome to My Portfolio
               </h1>
-              <p className="text-xl md:text-2xl text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] mb-8">
+              <p className="text-xl md:text-2xl text-[hsl(var(--subText))] mb-8">
                 I'm a freelance developer specializing in creating modern,
                 responsive web applications
               </p>
@@ -68,7 +68,7 @@ const Home = () => {
               asChild
               variant="outline"
               className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))] 
-              text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))]"
+              text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
             >
               <Link to="/projects">View Projects</Link>
             </Button>
@@ -77,7 +77,7 @@ const Home = () => {
               asChild
               variant="outline"
               className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))]"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
             >
               <Link to="/create-app">Create Your Custom App</Link>
             </Button>
@@ -86,7 +86,7 @@ const Home = () => {
               asChild
               variant="outline"
               className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))]"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
             >
               <Link to="/contact">Contact Me</Link>
             </Button>
@@ -113,12 +113,12 @@ const Home = () => {
               >
                 <CardHeader>
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <CardTitle className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+                  <CardTitle className="text-[hsl(var(--text))]">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] text-sm">
+                  <p className="text-[hsl(var(--subText))] text-sm">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -145,12 +145,12 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="text-center"
+              className="text-center bg-[hsl(var(--bgCard))] rounded-full py-8"
             >
-              <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--subText)/0.8)] mb-2">
                 {stat.value}
               </div>
-              <div className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))]">{stat.label}</div>
+              <div className="text-[hsl(var(--subText)/0.6)]">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

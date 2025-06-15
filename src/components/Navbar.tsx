@@ -24,41 +24,50 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         <Link
           to="/"
-          className="text-2xl font-bold text-[var(--text)] flex items-center gap-2"
+          className="text-2xl font-bold text-[hsl(var(--text))] flex items-center gap-2"
         >
           <img src={logo} alt="logo" className="w-10 h-10 rounded-full" />
           Portfolio
         </Link>
 
         {/* Hamburger Menu Button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-[var(--text)] transition-colors duration-400"
-          aria-label="Toggle menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+        <div className="flex items-center gap-0">
+          <button
+            onClick={() => dispatch(toggleTheme())}
+            className="text-2xl lg:hidden p-2 rounded-full cursor-pointer hover:bg-[hsl(var(--text))] transition-colors duration-400"
+            aria-label="Toggle theme"
           >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            )}
-          </svg>
-        </button>
+            {isDarkMode ? "🌞" : "🌙"}
+          </button>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg text-[hsl(var(--text))] transition-colors duration-400"
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6">
@@ -66,7 +75,7 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className="text-[var(--subText)] hover:text-[var(--text)] transition-colors duration-400"
+              className="text-xl text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] transition-colors duration-400"
             >
               {item.label}
             </Link>
@@ -84,16 +93,16 @@ const Navbar = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] hover:text-[hsl(var(--text))] hover:text-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
+                className="text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] transition-colors duration-400"
                 aria-label={label}
               >
-                <IconComponent size={18} />
+                <IconComponent size={20} />
               </a>
             );
           })}
           <button
             onClick={() => dispatch(toggleTheme())}
-            className="p-2 rounded-full cursor-pointer hover:bg-[hsl(var(--text))] hover:bg-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
+            className="text-2xl p-2 rounded-full cursor-pointer hover:bg-[hsl(var(--text))] transition-colors duration-400"
             aria-label="Toggle theme"
           >
             {isDarkMode ? "🌞" : "🌙"}
@@ -111,7 +120,7 @@ const Navbar = () => {
           <Link
             key={item.path}
             to={item.path}
-            className="text-[var(--subText)] hover:text-[var(--text)] block py-2 transition-colors duration-400"
+            className="text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] block py-2 transition-colors duration-400"
           >
             {item.label}
           </Link>
@@ -128,20 +137,13 @@ const Navbar = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] hover:text-[hsl(var(--text))] hover:text-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
+                className="text-xl text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] transition-colors duration-400"
                 aria-label={label}
               >
                 <IconComponent size={20} />
               </a>
             );
           })}
-          <button
-            onClick={() => dispatch(toggleTheme())}
-            className="p-2 rounded-lg hover:bg-[hsl(var(--text))] hover:bg-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? "🌞" : "🌙"}
-          </button>
         </div>
       </div>
     </nav>
