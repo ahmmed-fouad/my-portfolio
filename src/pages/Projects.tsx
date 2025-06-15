@@ -36,14 +36,14 @@ const Projects = () => {
           animate={{ x: 0, opacity: 1 }}
           className="w-full md:w-[20%] space-y-6 "
         >
-          <div className=" bg-[var(--bgCard)] border-[var(--border)] rounded-lg p-6 shadow-lg border text-[var(--subText)]">
-            <h3 className="text-lg font-semibold mb-4 text-[var(--text)]">
+          <div className=" bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] rounded-lg p-6 shadow-lg border text-[hsl(var(--subText))]">
+            <h3 className="text-lg font-semibold mb-4 text-[hsl(var(--text))]">
               Filters
             </h3>
 
             <div className="space-y-5">
               <div>
-                <h4 className="text-sm font-medium mb-2 text-[var(--text)]">
+                <h4 className="text-sm font-medium mb-2 text-[hsl(var(--text))]">
                   Project Size
                 </h4>
                 <div className="space-y-2">
@@ -55,7 +55,7 @@ const Projects = () => {
                         onChange={() => handleFilterChange("size", size)}
                         className="rounded border-gray-300 text-primary focus:ring-primary"
                       />
-                      <span className="text-sm capitalize text-[var(--subText)]">
+                      <span className="text-sm capitalize text-[hsl(var(--subText))]">
                         {size}
                       </span>
                     </label>
@@ -64,7 +64,7 @@ const Projects = () => {
               </div>
 
               <div>
-                <h4 className="text-sm font-medium mb-2 text-[var(--text)]">
+                <h4 className="text-sm font-medium mb-2 text-[hsl(var(--text))]">
                   Project Type
                 </h4>
                 <div className="space-y-2">
@@ -78,7 +78,7 @@ const Projects = () => {
                         checked={filters.type.includes(type)}
                         onChange={() => handleFilterChange("type", type)}
                       />
-                      <span className="text-sm text-[var(--subText)]">
+                      <span className="text-sm text-[hsl(var(--subText))]">
                         {type}
                       </span>
                     </label>
@@ -87,18 +87,18 @@ const Projects = () => {
               </div>
 
               <div>
-                <h4 className="text-sm font-medium mb-2 text-[var(--text)]">
+                <h4 className="text-sm font-medium mb-2 text-[hsl(var(--text))]">
                   Sort By
                 </h4>
                 <select
                   onChange={(e) => dispatch(setSortBy(e.target.value))}
-                  className="w-full rounded-md border border-[var(--border)] bg-[var(--bgCard)] cursor-pointer px-3 py-2 text-sm"
+                  className="w-full rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--bgCard))] cursor-pointer px-3 py-2 text-sm"
                 >
                   {sortOptions.map((option) => (
                     <option
                       key={option.value}
                       value={option.value}
-                      className="text-[var(--text)] cursor-pointer"
+                      className="text-[hsl(var(--text))] cursor-pointer"
                     >
                       {option.label}
                     </option>

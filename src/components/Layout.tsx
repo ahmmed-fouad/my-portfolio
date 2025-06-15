@@ -18,32 +18,32 @@ const Layout = ({ children }: LayoutProps) => {
 
       <main className="pt-16">{children}</main>
 
-      <footer className="bg-[hsl(var(--bgCard))] border border-t border-[hsl(var(--border))]">
+      <footer className="bg-[hsl(var(--bgCard))] border-t border-[hsl(var(--border))]">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-[hsl(var(--text))]">
                 <Icons.Mail className="" size={20} />
                 Contact
               </h3>
 
-              <p className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] flex items-center gap-2">
-                <Icons.Phone className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]" size={18} />{" "}
+              <p className="text-[hsl(var(--subText))] flex items-center gap-2">
+                <Icons.Phone className="text-[hsl(var(--text))]" size={18} />{" "}
                 01011820991
               </p>
 
-              <p className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] flex items-center gap-2">
-                <Icons.Mail className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]" size={18} />{" "}
+              <p className="text-[hsl(var(--subText))] flex items-center gap-2">
+                <Icons.Mail className="text-[hsl(var(--text))]" size={18} />{" "}
                 afouad.zizo@gmail.com
               </p>
 
-              <p className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] flex items-center gap-2">
-                <span className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">Address:</span> 1200
+              <p className="text-[hsl(var(--subText))] flex items-center gap-2">
+                <span className="text-[hsl(var(--text))]">Address:</span> 1200
                 Buildings, Borg Al-Arab City, Alexandria, Egypt
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+              <h3 className="text-lg font-semibold mb-4 text-[hsl(var(--text))]">
                 Quick Links
               </h3>
               <ul className="space-y-2">
@@ -51,7 +51,7 @@ const Layout = ({ children }: LayoutProps) => {
                   <li key={item.path}>
                     <Link
                       to={item.path}
-                      className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] hover:text-[hsl(var(--text))] hover:text-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
+                      className="text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] transition-colors duration-400"
                     >
                       {item.label}
                     </Link>
@@ -60,7 +60,7 @@ const Layout = ({ children }: LayoutProps) => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-[hsl(var(--text))]">
                 <Icons.Github className="" size={20} /> Follow Me
               </h3>
               <div className="flex space-x-4">
@@ -74,7 +74,7 @@ const Layout = ({ children }: LayoutProps) => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-2xl text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] hover:text-[hsl(var(--text))] hover:text-[hsl(var(--text)/var(--text-opacity))] transition-colors duration-400"
+                      className="text-2xl text-[hsl(var(--subText))] hover:text-[hsl(var(--text))] transition-colors duration-400"
                       aria-label={label}
                     >
                       <IconComponent size={20} />
@@ -84,10 +84,10 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-[#5dbcfc4d] text-center text-[#a1a1aa]">
+          <div className="mt-8 pt-8 border-t border-[ hsl(var(--border))] text-center text-[hsl(var(--subText))]">
             <p>
               &copy; {new Date().getFullYear()} 
-              <span className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] font-bold px-3">Ahmed Fouad</span>
+              <span className="text-[hsl(var(--text))] font-bold px-3">Ahmed Fouad</span>
 
               . All rights
               reserved.

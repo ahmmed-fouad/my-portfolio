@@ -312,3 +312,45 @@ export const sampleProjects: Project[] = [
         items: ["Git", "Docker", "AWS", "CI/CD", "Jest"],
       },
     ];
+
+    export const byProjectInputs = [
+      {
+        htmlFor: "name",
+        label: "Full Name",
+        type: "text",
+        placeholder: "Enter your full name",
+      },
+      {
+        htmlFor: "email",
+        label: "Email Address",
+        type: "email",
+        placeholder: "Enter your email address",
+      },
+      {
+        htmlFor: "message",
+        label: "Additional Notes (Optional)",
+        type: "text",
+        placeholder: "Enter your additional notes",
+      },
+    ];
+
+    export const whatIsIncluded = [
+      {
+        sypole: "•",
+        title: "Full source code",
+      },
+      {
+        sypole: "•",
+        title: "Documentation",
+      },
+      {
+        sypole: "•",
+        title: "Free updates",
+      },
+      {
+        sypole: "•",
+        title: "Support",
+      },
+    ];
+
+    

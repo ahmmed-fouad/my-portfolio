@@ -14,10 +14,10 @@ const About = () => {
         className="max-w-4xl mx-auto"
       >
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+          <h1 className="text-4xl font-bold mb-4 text-[hsl(var(--text))]">
             About Me
           </h1>
-          <p className="text-xl text-foreground/60 text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))]">
+          <p className="text-xl text-[hsl(var(--subText))]">
             Passionate developer crafting digital experiences
           </p>
         </div>
@@ -27,9 +27,9 @@ const About = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6 text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] bg-[hsl(var(--bgCard))] p-6 rounded-lg"
+            className="space-y-6 text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg"
           >
-            <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+            <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
               My Journey
             </h2>
             <p className="text-foreground/80 mb-4">
@@ -57,8 +57,8 @@ const About = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6 "
           >
-            <div className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+            <div className="text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
                 Education
               </h2>
               <div className="space-y-4">
@@ -79,8 +79,8 @@ const About = () => {
               </div>
             </div>
 
-            <div className="text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+            <div className="text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
                 Certifications
               </h2>
               <div className="space-y-4">
@@ -107,10 +107,10 @@ const About = () => {
           transition={{ delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold mb-8 text-center text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+          <h2 className="text-2xl font-bold mb-8 text-center text-[hsl(var(--text))]">
             Skills & Expertise
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-[hsl(var(--subText))] bg-[hsl(var(--bgCard))] p-6 rounded-lg">
             {skills.map((skillGroup, index) => (
               <motion.div
                 key={index}
@@ -126,7 +126,7 @@ const About = () => {
                   {skillGroup.items.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary"
+                      className="px-3 py-1 text-sm font-medium rounded-full text-[hsl(var(--text))]"
                     >
                       {skill}
                     </span>
@@ -143,10 +143,10 @@ const About = () => {
           transition={{ delay: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+          <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
             Let's Work Together
           </h2>
-          <p className="text-foreground/60 mb-8 text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))]">
+          <p className="text-foreground/60 mb-8 text-[hsl(var(--subText))]">
             I'm always open to discussing new projects and opportunities
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -154,7 +154,7 @@ const About = () => {
               asChild
               variant="outline"
               className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))]"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
             >
               <Link to="/contact">contact me</Link>
             </Button>
@@ -162,7 +162,7 @@ const About = () => {
               asChild
               variant="outline"
               className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))]"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))]"
             >
               <Link to="/projects">View Projects</Link>
             </Button>

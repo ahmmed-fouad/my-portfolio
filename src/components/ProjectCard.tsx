@@ -61,7 +61,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </CardHeader>
 
         <CardContent className="p-3">
-          <div className="flex flex-wrap gap-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+          <div className="flex flex-wrap gap-2 text-[hsl(var(--text))]">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
@@ -79,7 +79,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             variant="outline"
             size="sm"
             className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))] cursor-pointer"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))] cursor-pointer"
           >
             <Link to={`/projects/${project.id}`}>See More</Link>
           </Button>
@@ -88,7 +88,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             variant="outline"
             size="sm"
             className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))] cursor-pointer"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))] cursor-pointer"
           >
             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
               Try It
@@ -99,7 +99,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             variant="outline"
             size="sm"
             className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))] cursor-pointer"
+               text-[hsl(var(--text))] bg-[hsl(var(--bgCard))] cursor-pointer"
           >
             <Link to={`/buy/${project.id}`}>Buy Now</Link>
           </Button>

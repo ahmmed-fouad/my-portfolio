@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import contactAnimation from "../assets/contact.json";
 import Lottie from "lottie-react";
 import { Button } from "@/components/ui/button";
+// import { contactInput } from "@/data/projects";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -68,6 +69,27 @@ const Contact = () => {
     }
   };
 
+  const contactInput = [
+    {
+      htmlFor: "name",
+      label: "Name",
+      type: "text",
+      name: "name" as const,
+    },
+    {
+      htmlFor: "email",
+      label: "Email",
+      type: "email",
+      name: "email" as const,
+    },
+    {
+      htmlFor: "subject",
+      label: "Subject",
+      type: "text",
+      name: "subject" as const,
+    },
+  ];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -75,7 +97,7 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-2xl mx-auto"
       >
-        <h1 className="text-3xl font-bold mb-8 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+        <h1 className="text-3xl font-bold mb-8 text-[hsl(var(--text))]">
           Contact Me
         </h1>
 
@@ -83,7 +105,7 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] rounded-lg"
+            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--text))] rounded-lg"
           >
             Thank you for your message! I'll get back to you soon.
           </motion.div>
@@ -93,7 +115,7 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] rounded-lg"
+            className="mb-6 p-4 bg-[hsl(var(--bgCard))] text-[hsl(var(--text))] rounded-lg"
           >
             {error}
           </motion.div>
@@ -106,64 +128,27 @@ const Contact = () => {
           />
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-1">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]"
-            >
-              Name
-            </label>
-            <input
-              {...register("name")}
-              type="text"
-              id="name"
-              className="w-full rounded-md border outline-none border-[hsl(var(--border))] focus:border-[hsl(var(--bordHover))] px-3 py-2"
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]"
-            >
-              Email
-            </label>
-            <input
-              {...register("email")}
-              type="email"
-              id="email"
-              className="w-full rounded-md outline-none border border-[hsl(var(--border))] focus:border-[hsl(var(--bordHover))] px-3 py-2"
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.email.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="subject"
-              className="block text-sm font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]"
-            >
-              Subject
-            </label>
-            <input
-              {...register("subject")}
-              type="text"
-              id="subject"
-              className="w-full rounded-md border border-[hsl(var(--border))] focus:border-[hsl(var(--bordHover))] px-3 py-2 outline-none"
-            />
-            {errors.subject && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.subject.message}
-              </p>
-            )}
-          </div>
-
+          {contactInput.map((item) => (
+            <div key={item.name}>
+              <label
+                htmlFor={item.htmlFor}
+                className="block text-lg font-medium mb-2 text-[hsl(var(--text))]"
+              >
+                {item.label}
+              </label>
+              <input
+                {...register(item.name)}
+                type={item.type}
+                id={item.htmlFor}
+                className="w-full text-[hsl(var(--text))] rounded-md border outline-none border-[hsl(var(--border))] focus:border-[hsl(var(--bordHover))] px-3 py-2"
+              />
+              {errors[item.name] && (
+                <p className="mt-1 text-sm text-red-600">
+                  {errors[item.name]?.message}
+                </p>
+              )}
+            </div>
+          ))}
           <div>
             <label
               htmlFor="message"
@@ -183,12 +168,12 @@ const Contact = () => {
               </p>
             )}
           </div>
-         
+
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
-               text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] bg-[hsl(var(--bgCard))] cursor-pointer"
+            className="border border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]
+               text-[hsl(var(--text))]  bg-[hsl(var(--bgCard))] cursor-pointer"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
