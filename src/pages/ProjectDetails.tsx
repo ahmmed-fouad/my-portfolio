@@ -11,6 +11,10 @@ const ProjectDetails = () => {
     state.projects.projects.find((p) => p.id === id)
   );
 
+  useEffect(()=>{
+    console.log(project);
+  },[])
+
   useEffect(() => {
     if (project) {
       document.title = `${project.title} - Project Details`;
@@ -23,7 +27,12 @@ const ProjectDetails = () => {
         <Card>
           <CardContent className="flex flex-col items-center justify-center min-h-[400px]">
             <h2 className="text-2xl font-bold mb-4">Project not found</h2>
-            <Button asChild variant="outline" size="sm" className="border-[#5dbcfc4d] hover:border-[#5dbcfc]">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="border-[hsl(var(--border))] hover:border-[hsl(var(--bordHover))]"
+            >
               <Link to="/projects">Back to Projects</Link>
             </Button>
           </CardContent>
@@ -36,7 +45,7 @@ const ProjectDetails = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6">
-          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))]">
+          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))]">
             <div className="aspect-video relative overflow-hidden rounded-t-lg">
               <img
                 src={project.image}
@@ -44,7 +53,7 @@ const ProjectDetails = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <CardHeader className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+            <CardHeader className="text-[hsl(var(--text))]">
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-2 py-1 text-xs font-medium rounded-full">
                   {project.size}
@@ -63,7 +72,7 @@ const ProjectDetails = () => {
             </CardHeader>
 
             <CardContent>
-              <div className="flex flex-wrap gap-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+              <div className="flex flex-wrap gap-2 text-[hsl(var(--text))]">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
@@ -76,15 +85,15 @@ const ProjectDetails = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))]">
-            <CardHeader className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] text-2xl">
+          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))]">
+            <CardHeader className="text-[hsl(var(--text))] text-2xl">
               <CardTitle>Features</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
                 {project.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <span className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">•</span>
+                    <span className="text-[hsl(var(--text))]">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -94,13 +103,13 @@ const ProjectDetails = () => {
         </div>
 
         <div className="space-y-6">
-          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] min-h-[485px]">
-            <CardHeader className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] text-2xl">
+          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] min-h-[485px]">
+            <CardHeader className="text-[hsl(var(--text))] text-2xl">
               <CardTitle>Project Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h3 className="font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+                <h3 className="font-medium mb-2 text-[hsl(var(--text))]">
                   Description
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -108,7 +117,7 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div>
-                <h3 className="font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+                <h3 className="font-medium mb-2 text-[hsl(var(--text))]">
                   Technologies Used
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -116,11 +125,11 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div>
-                <h3 className="font-medium mb-2 text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))]">
+                <h3 className="font-medium mb-2 text-[hsl(var(--text))]">
                   Requirements
                 </h3>
                 <ul className="list-disc list-inside text-sm text-muted-foreground">
-                  {project.requirements.map((req, index) => (
+                  {project.requirements?.map((req, index) => (
                     <li key={index}>{req}</li>
                   ))}
                 </ul>
@@ -128,8 +137,8 @@ const ProjectDetails = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] text-[hsl(var(--subText)/var(--subText-opacity))] min-h-[210px]">
-            <CardHeader className="text-[hsl(var(--text))] text-[hsl(var(--text)/var(--text-opacity))] text-2xl">
+          <Card className="bg-[hsl(var(--bgCard))] border-[hsl(var(--border))] text-[hsl(var(--subText))] min-h-[210px]">
+            <CardHeader className="text-[hsl(var(--text))] text-2xl">
               <CardTitle>Get Started</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">

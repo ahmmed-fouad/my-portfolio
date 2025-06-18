@@ -1,54 +1,9 @@
+import { services } from '@/data/projects';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-  const services = [
-    {
-      title: 'Web Development',
-      description: 'Creating modern, responsive web applications using the latest technologies like React, Next.js, and TypeScript.',
-      icon: '🌐',
-      features: [
-        'Custom Web Applications',
-        'E-commerce Solutions',
-        'Progressive Web Apps',
-        'API Development',
-      ],
-    },
-    {
-      title: 'UI/UX Design',
-      description: 'Designing beautiful and intuitive user interfaces with a focus on user experience and accessibility.',
-      icon: '🎨',
-      features: [
-        'User Interface Design',
-        'User Experience Design',
-        'Wireframing & Prototyping',
-        'Design Systems',
-      ],
-    },
-    {
-      title: 'Mobile Development',
-      description: 'Building cross-platform mobile applications using React Native for iOS and Android.',
-      icon: '📱',
-      features: [
-        'Cross-platform Apps',
-        'Native Features Integration',
-        'App Store Optimization',
-        'Performance Optimization',
-      ],
-    },
-    {
-      title: 'Consulting',
-      description: 'Providing expert advice on technology stack, architecture, and best practices for your projects.',
-      icon: '💡',
-      features: [
-        'Technical Architecture',
-        'Code Review',
-        'Performance Optimization',
-        'Best Practices',
-      ],
-    },
-  ];
-
+ 
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -56,10 +11,10 @@ const Services = () => {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-4xl mx-auto text-center mb-16"
       >
-        <h1 className="text-4xl font-bold mb-4 text-blue-400/70">
+        <h1 className="text-4xl font-bold mb-4 text-[hsl(var(--text))]">
           My Services
         </h1>
-        <p className="text-xl text-foreground/60">
+        <p className="text-xl text-[hsl(var(--subText2))]">
           I offer a wide range of services to help bring your ideas to life
         </p>
       </motion.div>
@@ -71,10 +26,10 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-card rounded-lg p-8 shadow-lg bg-gray-900 text-gray-100/80"
+            className="bg-card rounded-lg p-8 shadow-lg bg-[hsl(var(--bgCard))] text-[hsl(var(--subText))]"
           >
             <div className="text-4xl mb-4 ">{service.icon}</div>
-            <h2 className="text-2xl font-bold mb-4 text-blue-300/60">
+            <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
               {service.title}
             </h2>
             <p className="text-foreground/60 mb-6">{service.description}</p>
@@ -94,7 +49,7 @@ const Services = () => {
             </ul>
             <Link
               to="/contact"
-              className="inline-block px-6 py-3 text-blue-400/70 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              className=" px-6 py-2 text-[hsl(var(--text))] border border-[hsl(var(--border))]  rounded-md hover:border-[hsl(var(--bordHover))] transition-colors"
             >
               Get Started
             </Link>
@@ -108,15 +63,15 @@ const Services = () => {
         transition={{ delay: 0.4 }}
         className="mt-16 text-center"
       >
-        <h2 className="text-2xl font-bold mb-4 text-blue-400/70">
+        <h2 className="text-2xl font-bold mb-4 text-[hsl(var(--text))]">
           Ready to Start Your Project?
         </h2>
-        <p className="text-foreground/60 mb-8">
+        <p className="text-[hsl(var(--subText2))] mb-8">
           Let's discuss how I can help bring your ideas to life
         </p>
         <Link
           to="/contact"
-          className="inline-block px-8 py-4 text-blue-400/70 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/90 transition-colors"
+          className="inline-block px-8 py-3 text-[hsl(var(--text))] border border-[hsl(var(--border))]  rounded-md hover:border-[hsl(var(--bordHover))] transition-colors"
         >
           Contact Me
         </Link>

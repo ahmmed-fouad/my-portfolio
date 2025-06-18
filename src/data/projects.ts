@@ -312,3 +312,100 @@ export const sampleProjects: Project[] = [
         items: ["Git", "Docker", "AWS", "CI/CD", "Jest"],
       },
     ];
+
+    export const byProjectInputs = [
+      {
+        htmlFor: "name",
+        label: "Full Name",
+        type: "text",
+        placeholder: "Enter your full name",
+      },
+      {
+        htmlFor: "email",
+        label: "Email Address",
+        type: "email",
+        placeholder: "Enter your email address",
+      },
+      {
+        htmlFor: "message",
+        label: "Additional Notes (Optional)",
+        type: "text",
+        placeholder: "Enter your additional notes",
+      },
+    ];
+
+    export const whatIsIncluded = [
+      {
+        sypole: "•",
+        title: "Full source code",
+      },
+      {
+        sypole: "•",
+        title: "Documentation",
+      },
+      {
+        sypole: "•",
+        title: "Free updates",
+      },
+      {
+        sypole: "•",
+        title: "Support",
+      },
+    ];
+
+    export const homeButtons = [
+      { id: "1", title: "View Projects", path: "/projects" },
+      { id: "2", title: "Create Your Custom App", path: "/create-app" },
+      { id: "3", title: "Contact Me", path: "/contact" },
+    ];
+
+    export const services = [
+      {
+        title: "Web Development",
+        description:
+          "Creating modern, responsive web applications using the latest technologies like React, Next.js, and TypeScript.",
+        icon: "🌐",
+        features: [
+          "Custom Web Applications",
+          "E-commerce Solutions",
+          "Progressive Web Apps",
+          "API Development",
+        ],
+      },
+      {
+        title: "UI/UX Design",
+        description:
+          "Designing beautiful and intuitive user interfaces with a focus on user experience and accessibility.",
+        icon: "🎨",
+        features: [
+          "User Interface Design",
+          "User Experience Design",
+          "Wireframing & Prototyping",
+          "Design Systems",
+        ],
+      },
+      {
+        title: "Mobile Development",
+        description:
+          "Building cross-platform mobile applications using React Native for iOS and Android.",
+        icon: "📱",
+        features: [
+          "Cross-platform Apps",
+          "Native Features Integration",
+          "App Store Optimization",
+          "Performance Optimization",
+        ],
+      },
+      {
+        title: "Consulting",
+        description:
+          "Providing expert advice on technology stack, architecture, and best practices for your projects.",
+        icon: "💡",
+        features: [
+          "Technical Architecture",
+          "Code Review",
+          "Performance Optimization",
+          "Best Practices",
+        ],
+      },
+    ];
